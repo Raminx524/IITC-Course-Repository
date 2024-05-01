@@ -155,7 +155,7 @@ function endGame(result) {
   const timeStr = calcTime(startTime);
   document
     .getElementById("grid_board")
-    .removeEventListener("click", handleClick);
+    .removeEventListener("click", handleTurnClick);
   gamesArchive.push(prettyResult(result, player1, player2, timeStr));
   updateArchive();
   document.getElementById(
@@ -166,7 +166,6 @@ function endGame(result) {
 }
 
 function handleTurnClick(event) {
-  // event.stopPropagation();
   const validMove = checkMove(event.target, currentPlayer);
   isWinner = checkForWinner(currentPlayer.symbol);
   if (isWinner) {
