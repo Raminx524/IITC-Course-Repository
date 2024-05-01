@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="pageContainer">
+      <h1 id="pageTitle">Bulls and Cows</h1>
+      <div id="userInputSection">
+        <div id="inputContainer">
+          <div id="userNumber">
+            <button class="userNumDigit">0</button>
+            <button class="userNumDigit">1</button>
+            <button class="userNumDigit">2</button>
+            <button class="userNumDigit">3</button>
+          </div>
+          <img id="arrowIcon" src="assets/arrowIcon.png" alt="^^" />
+          <span>Tip: Click on the numbers to change their values</span>
+        </div>
+        <div id="btnAndWinStr">
+          <div id="btnContainer">
+            <button id="guessBtn">Guess</button>
+            <button id="forfeitBtn">Reveal</button>
+          </div>
+          <h2 id="winStr">Well done! click on GUESS to rematch!</h2>
+        </div>
+      </div>
+
+      <div id="dynamicSection">
+        <div id="errorDisplay"></div>
+        <div id="resultDisplay"></div>
+        <div id="rngDisplay"></div>
+        <div id="historyContainer">
+          <h2 id="historyTitle">Guess History:</h2>
+          <div id="guessHistory"></div>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

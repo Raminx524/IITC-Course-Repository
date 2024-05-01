@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+#pageContainer {
+  color: #fff;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+  background-color: #000;
+}
+h1 {
+  color: #ffee00;
+}
+#userInputSection {
+  display: flex;
+  flex-direction: row;
+  gap: 1vw;
+}
+#userInputSection button {
+  height: 5vh;
+  width: 6vw;
+  font-size: large;
+}
+
+#rngDisplay {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1vw;
+  color: #f00;
+}
+
+#bullsTxt {
+  color: #79ec37;
+}
+#cowsTxt {
+  color: rgb(70, 70, 250);
+}
+#resultDisplay {
+  display: flex;
+  gap: 1vw;
+  justify-content: center;
+}
+.userGuessDisplay {
+  display: flex;
+  gap: 0.5vw;
+}
+
+.userNumDigit {
+  background-color: #484848;
+  color: #ffee00;
+}
+
+#rngNumber {
+  font-size: x-large;
+  letter-spacing: 0.5em;
+}
+
+#forfeitBtn {
+  font-weight: 600;
+  background-color: #f00;
+}
+
+#guessBtn {
+  background-color: #80ff4e;
+  font-weight: 600;
+}
+
+.userGuessDisplayDigit {
+  height: 5vh;
+  width: 6vw;
+  font-size: large;
+  font-weight: bold;
+  background-color: #484848;
+  color: #ffee00;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#errorDisplay {
+  color: #f00;
+  display: flex;
+  justify-content: center;
+}
+
+#guessHistory {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1vh;
+}
+
+#inputContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4vh;
+}
+#arrowIcon {
+  height: 3vh;
+  width: 4vw;
+}
+span {
+  color: #ffee00;
+}
+#arrowIcon {
+  rotate: -40deg;
+  height: 3vh;
+  width: 2vw;
+}
+.userGuessDisplay:last-child .userGuessDisplayDigit {
+  background-color: #c0a52d;
+  color: #000;
+}
+#historyContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#historyTitle {
+  visibility: hidden;
+  color: #ffee00;
+}
+#winStr {
+  visibility: hidden;
+  color: #00ff00;
+  font-size: larger;
+}
+#btnContainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+@media (max-width: 600px) {
+  #userInputSection {
+    flex-direction: column;
+  }
+  #userInputSection button {
+    width: 20vw;
+  }
+}

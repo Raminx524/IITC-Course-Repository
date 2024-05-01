@@ -1,0 +1,246 @@
+div#pageContainer {
+  background-image: linear-gradient(to top, #5f72bd 0%, #9b23ea 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  overflow-x: hidden;
+  height: 100vh;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5em;
+  padding-top: 5em;
+}
+nav#navBar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1vw;
+  height: 3em;
+  color: #fff;
+  background-color: #200e3d;
+  position: sticky;
+  top: 0;
+}
+
+#navBar a {
+  text-decoration: none;
+  background-color: #200e3d;
+  color: #fff;
+  border: 0;
+}
+#navBar a:hover {
+  color: #00d9ff;
+}
+
+div#introContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  align-items: center;
+}
+
+h2#introTxt {
+  color: #000;
+  font-size: x-large;
+  font-weight: bold;
+}
+#introContainer img {
+  max-width: 440px;
+  max-height: 440px;
+  height: 20vw;
+  width: 20vw;
+  border-radius: 50%;
+}
+#aboutMeContainer img {
+  width: 25vw;
+}
+
+p#aboutMeParagraph {
+  width: 20vw;
+}
+
+div#aboutMeContainer {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  justify-self: center;
+}
+
+div#aboutMeSection {
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55vw;
+  height: 40em;
+  background-color: #fff;
+  box-shadow: 10px 10px #4e2981, -10px -10px #e66886;
+}
+div#aboutMeParagraph {
+  width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: large;
+}
+h2#aboutMeTitle {
+  font-size: 2em;
+}
+#projectSection {
+  height: 35em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+h2#projectsTitle {
+  color: #fff;
+  font-size: xx-large;
+}
+
+div#projectContainer {
+  display: flex;
+  width: 100%;
+  gap: 3em;
+}
+
+.projectCard {
+  display: flex;
+  height: 25em;
+  width: 25em;
+  border-radius: 10px;
+}
+
+div#memoryGameCard {
+  background-image: url(assets/memoryGameCardPic.png);
+  background-repeat: round;
+}
+
+div#ynetCard {
+  background-image: url(assets/ynet_logo.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-color: #fff;
+}
+
+.projectSummary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 3.5em;
+  transition: 0.2s;
+  overflow: hidden;
+  align-self: flex-end;
+  background-color: #2e54a7;
+  color: #fff;
+  width: 100%;
+}
+.projectSummary a {
+  text-decoration: none;
+  color: #00d9ff;
+  font-weight: bold;
+}
+div#contactMeSection {
+  width: 100vw;
+  height: 50em;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  font-weight: bold;
+  align-items: center;
+  background-color: #3a3a6c;
+  gap: 2em;
+  padding: 1em;
+}
+
+form#contactForm {
+  display: flex;
+  flex-direction: column;
+  width: 55vw;
+  gap: 2em;
+}
+
+div#headlineInputsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 40%;
+}
+
+div#contactInputsContainer {
+  display: flex;
+  gap: 5%;
+}
+
+div#headlineInputsContainer Input {
+  height: 2em;
+  border-radius: 10px;
+  border: 0;
+  padding: 0.5em;
+}
+
+div#contactMsgBoxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 55%;
+}
+
+#contactMsgBoxContainer Input {
+  height: 100%;
+  border-radius: 10px;
+  border: 0;
+}
+
+#contactForm button {
+  align-self: flex-end;
+  width: 10em;
+  height: 3em;
+  border: 0;
+  border-radius: 5px;
+  font-weight: bold;
+  background-color: #add8e6;
+}
+
+div#footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #1f2027;
+  color: #fff;
+}
+#socialIconsContainer img {
+  border-radius: 50%;
+  height: 2em;
+}
+div#socialIconsContainer {
+  display: flex;
+  gap: 1em;
+}
+
+.projectSummary:hover {
+  height: 175px;
+  transition: 0.3s;
+}
+#ynetLinksContainer {
+  display: flex;
+  gap: 10%;
+  width: 100%;
+  justify-content: center;
+}
+h2#contactMeTitle {
+  font-size: xx-large;
+}

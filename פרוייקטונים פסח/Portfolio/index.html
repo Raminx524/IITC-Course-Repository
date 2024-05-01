@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="pageContainer">
+      <nav id="navBar">
+        <a href="#aboutMeSection">ABOUT ME</a>
+        <a href="#projectSection">PROJECTS</a>
+        <a href="#contactMeSection">CONTACT ME</a>
+      </nav>
+      <div id="main">
+        <div id="introContainer">
+          <img src="assets/introPic.jfif" />
+          <h2 id="introTxt">
+            Hi! I'm Ramin! I am learning Fullstack web development.
+          </h2>
+        </div>
+        <div id="aboutMeSection">
+          <h2 id="aboutMeTitle">About Me</h2>
+          <div id="aboutMeContainer">
+            <img src="assets/aboutMePic.jfif" />
+            <div id="aboutMeParagraph">
+              <p>
+                Almost a decade ago I was busy teaching math to teenagers at
+                three schools in London and Cambridge. Since I’m a bit of a
+                coding geek, I also built websites on the side for friends and
+                family. I soon learned that web development was a very lucrative
+                career choice, so I gave up my successful (and sometimes
+                stressful) job as a teacher to build websites. Today, I couldn’t
+                be happier with that decision.
+              </p>
+              <p>
+                After building websites for about seven years, I noticed a lot
+                of people struggling to learn how to code. I wanted others to
+                have the same freedoms that I enjoyed, so I started teaching web
+                development
+              </p>
+              <p>
+                I'm familiar with HTML5, CSS3, JavaScript and Python. Checkout
+                some of the projects I've done below.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div id="projectSection">
+          <h2 id="projectsTitle">Projects</h2>
+          <div id="projectContainer">
+            <div class="projectCard" id="memoryGameCard">
+              <div class="projectSummary">
+                <h2>Memory Game</h2>
+                <p class="projectSummaryPara">
+                  A Memory game built using HTML , CSS and JavaScript
+                </p>
+                <a href="../Memory game/index.html">View Project</a>
+              </div>
+            </div>
+            <div class="projectCard" id="ynetCard">
+              <div class="projectSummary">
+                <h2>ynet News Clone</h2>
+                <p class="projectSummaryPara">
+                  This project is a replica of "ynet", A News Site
+                </p>
+                <div id="ynetLinksContainer">
+                  <a href="https://raminx524.github.io/YnetProject/"
+                    >View Project</a
+                  >
+                  <a href="https://www.ynet.co.il/home/0,7340,L-8,00.html"
+                    >View Original</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="contactMeSection">
+          <h2 id="contactMeTitle">Contact</h2>
+          <h3>Use this form to get in touch. I would love to hear from you!</h3>
+          <form id="contactForm">
+            <div id="contactInputsContainer">
+              <div id="headlineInputsContainer">
+                <label for="nameInput">Name</label>
+                <input
+                  type="text"
+                  name="nameInput"
+                  id="nameInput"
+                  placeholder="Your name"
+                  required
+                />
+                <label for="subjectInput">Subject</label>
+                <input
+                  type="text"
+                  name="subjectInput"
+                  id="subjectInput"
+                  placeholder="Reason for your message"
+                  required
+                />
+                <label for="emailInput">Email Address</label>
+                <input
+                  type="text"
+                  name="emailInput"
+                  id="emailInput"
+                  placeholder="Your email Address"
+                  required
+                />
+              </div>
+              <div id="contactMsgBoxContainer">
+                <label for="msgBoxInput">Message</label>
+                <input type="text" required />
+              </div>
+            </div>
+            <button type="submit">SUBMIT</button>
+          </form>
+        </div>
+      </div>
+      <div id="footer">
+        <h3 id="footerTxt">This site © 2024 Ramin Aliev</h3>
+        <div id="socialIconsContainer">
+          <a href="https://github.com/Raminx524"
+            ><img src="assets/github.png" alt="Github"
+          /></a>
+          <a href="https://www.facebook.com/ramin.aliev.5055"
+            ><img src="assets/facebook.jpg" alt="Facebook"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic tac toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="pageContainer">
+      <h1>Tic Tac Toe</h1>
+      <form id="gameInfoForm">
+        <label for="p1">Player 1:</label>
+        <input type="text" name="p1" id="p1_input" required />
+        <label for="p2">Player 2:</label>
+        <input type="text" name="p2" id="p2_input" required />
+        <label for="gridSize">Grid Size (n*n)</label>
+        <input
+          type="number"
+          name="gridSize"
+          id="grid_input"
+          value="3"
+          min="3"
+        />
+        <div id="startAsContainer">
+          <p>Player 1 starts as:</p>
+          <input type="radio" id="xOption" name="startSym" value="X" checked />
+          <label for="xOption">X</label>
+          <input type="radio" id="oOption" name="startSym" value="O" />
+          <label for="oOption">O</label>
+        </div>
+        <button id="startBtn">Start Game</button>
+      </form>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
