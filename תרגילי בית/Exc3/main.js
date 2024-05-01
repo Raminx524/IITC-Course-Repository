@@ -165,8 +165,8 @@ function endGame(result) {
   return timeStr;
 }
 
-function handleClick(event) {
-  event.stopPropagation();
+function handleTurnClick(event) {
+  // event.stopPropagation();
   const validMove = checkMove(event.target, currentPlayer);
   isWinner = checkForWinner(currentPlayer.symbol);
   if (isWinner) {
@@ -194,7 +194,7 @@ function startGame() {
   currentPlayer = player1;
   const board = document.getElementById("grid_board");
   document.getElementById("msgBox").innerText = `${currentPlayer.name}'s turn`;
-  gameStats = board.addEventListener("click", handleClick);
+  gameStats = board.addEventListener("click", handleTurnClick);
 }
 
 gameInfoForm.addEventListener("submit", (event) => {

@@ -9,45 +9,51 @@
   <body>
     <div id="pageContainer">
       <h1>Memory Game</h1>
-      <div id="gameBoard">
-        <div id="cardsContainer"></div>
-        <div id="uiContainer">
-          <div id="sizeContainer">
-            <h2>Board Sizes:</h2>
-            <div id="boardSizeOptions">
-              <button class="sizeOptionBtn" onclick="startGame(4,4)">
-                4x4
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(5,4)">
-                5x4
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(6,5)">
-                6x5
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(6,6)">
-                6x6
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(7,6)">
-                7x6
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(8,6)">
-                8x6
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(9,6)">
-                9x6
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(10,7)">
-                10x7
-              </button>
-              <button class="sizeOptionBtn" onclick="startGame(10,10)">
-                10x10
-              </button>
+      <div id="gameBoardContainer">
+        <div id="gameBoard">
+          <div id="cardsContainer"></div>
+          <div id="uiContainer">
+            <div id="sizeContainer">
+              <h2>Board Sizes:</h2>
+              <div id="boardSizeOptions">
+                <button class="sizeOptionBtn" onclick="startGame(4,4)">
+                  4x4
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(5,4)">
+                  5x4
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(6,5)">
+                  6x5
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(6,6)">
+                  6x6
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(7,6)">
+                  7x6
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(8,6)">
+                  8x6
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(9,6)">
+                  9x6
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(10,7)">
+                  10x7
+                </button>
+                <button class="sizeOptionBtn" onclick="startGame(10,10)">
+                  10x10
+                </button>
+              </div>
+            </div>
+            <div id="gameInfo">
+              <p id="moveStr">Moves: <span id="moveSpan"></span></p>
+              <p id="timeStr">Time: <span id="timeSpan"></span></p>
             </div>
           </div>
-          <div id="gameInfo">
-            <p id="moveStr">Moves: <span id="moveSpan"></span></p>
-            <p id="timeStr">Time: <span id="timeSpan"></span></p>
-          </div>
+        </div>
+        <div id="winMsgContainer">
+          <h2 id="winStr">You Win!</h2>
+          <button id="rematchBtn" onclick="startGame(col, row)">Rematch</button>
         </div>
       </div>
     </div>

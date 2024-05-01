@@ -67,6 +67,7 @@ function updateGameInfo() {
 }
 
 function startGame(columns, rows) {
+  document.getElementById("winMsgContainer").style.visibility = "hidden";
   col = columns;
   row = rows;
   clearInterval(clockID);
@@ -130,15 +131,8 @@ function handleClick(event) {
   }
   if (pairsFound == document.getElementsByClassName("singleCard").length / 2) {
     clearInterval(clockID);
-    document.getElementById(
-      "gameInfo"
-    ).innerHTML += `<h2 id="winStr">You Win!</h2>
-    <button id="rematchBtn">Rematch</button>`;
+    document.getElementById("winMsgContainer").style.visibility = "visible";
     document.getElementById("rematchBtn").addEventListener("click", () => {
-      document.getElementById(
-        "gameInfo"
-      ).innerHTML = `<p id="moveStr">Moves: <span id="moveSpan"></span></p>
-      <p id="timeStr">Time: <span id="timeSpan"></span></p>`;
       startGame(col, row);
     });
   }

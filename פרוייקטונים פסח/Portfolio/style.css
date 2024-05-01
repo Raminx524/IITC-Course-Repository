@@ -11,6 +11,7 @@ body {
   width: 100vw;
   overflow-x: hidden;
   height: 100vh;
+  font-family: "Work Sans", sans-serif
 }
 
 #main {
@@ -53,7 +54,7 @@ div#introContainer {
 h2#introTxt {
   color: #000;
   font-size: x-large;
-  font-weight: bold;
+  font-weight: 1000;
 }
 #introContainer img {
   max-width: 440px;
@@ -74,7 +75,6 @@ div#aboutMeContainer {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
-  justify-self: center;
 }
 
 div#aboutMeSection {
@@ -94,11 +94,16 @@ div#aboutMeParagraph {
   justify-content: center;
   font-size: large;
 }
-h2#aboutMeTitle {
+h2{
+  font-family: "Days One", sans-serif;
+}
+.sectionTitle {
   font-size: 2em;
+  font-weight: 900;
 }
 #projectSection {
   height: 35em;
+  width: 55vw;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -155,6 +160,7 @@ div#ynetCard {
 div#contactMeSection {
   width: 100vw;
   height: 50em;
+  max-height: 90vh;
   display: flex;
   flex-direction: column;
   color: #fff;
@@ -217,14 +223,15 @@ div#contactMsgBoxContainer {
 div#footer {
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 50%;
   align-items: center;
   background-color: #1f2027;
   color: #fff;
 }
-#socialIconsContainer img {
-  border-radius: 50%;
-  height: 2em;
+#socialIconsContainer i {
+  color: #fff;
+  font-size: xx-large;
 }
 div#socialIconsContainer {
   display: flex;
@@ -243,4 +250,31 @@ div#socialIconsContainer {
 }
 h2#contactMeTitle {
   font-size: xx-large;
+}
+.projectSummaryPara {
+  text-align: center;
+}
+@media (max-width:1200px){
+  #aboutMeParagraph{
+    max-height: 30em;
+  }
+  #aboutMeContainer{
+    flex-direction: column;
+    align-items: center;
+    height: 30em;
+  }
+  #aboutMeParagraph p{
+    font-size: x-small;
+    width: 50vw;
+    align-self: center;
+  }
+  h2#introTxt{
+    text-align: center;
+  }
+  div#projectContainer{
+    width: 90vw;
+  }
+  #contactMeSection h3{
+    text-align: center;
+  }
 }
