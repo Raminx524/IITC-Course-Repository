@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .completed {
+        background-color: rgb(4, 155, 4);
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="pageContainer">
+      <label for="todoInput">ToDo Item Name</label>
+      <input type="text" name="todoInput" id="todoInput" required />
+      <button id="addTodoBtn">Add Item</button>
+      <button id="sortBtn" onclick="sortList()">Sort List</button>
+      <button id="clearBtn" onclick="clearList()">Clear List</button>
+      <ul id="todoList"></ul>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
