@@ -21,24 +21,24 @@ function createAscendingArr(arrParam) {
   return sortedArr;
 }
 
-const sortedNumbers = createAscendingArr(numArray);
-console.log(sortedNumbers);
-console.log(numArray);
+// const sortedNumbers = createAscendingArr(numArray);
+// console.log(sortedNumbers);
+// console.log(numArray);
 
 //----------Sort_2-------------
-function sort_numArray_Ascending() {
+function sortArrayAscending(arrParam) {
   let isSorted = false;
   while (!isSorted) {
     isSorted = true;
-    for (let i = 0; i < numArray.length - 1; i++) {
-      if (numArray[i] > numArray[i + 1]) {
+    for (let i = 0; i < arrParam.length - 1; i++) {
+      if (arrParam[i] > arrParam[i + 1]) {
         isSorted = false;
-        const temp = numArray[i];
-        numArray[i] = numArray[i + 1];
-        numArray[i + 1] = temp;
+        const temp = arrParam[i];
+        arrParam[i] = arrParam[i + 1];
+        arrParam[i + 1] = temp;
       }
     }
   }
 }
-sort_numArray_Ascending();
+sortArrayAscending(numArray);
 console.log(numArray);
