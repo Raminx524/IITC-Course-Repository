@@ -46,12 +46,12 @@ console.log(filterYoungerThan34(objArr));
 function calcArrSum(arr) {
   return arr.reduce((num1, num2) => num1 + num2);
 }
-console.log(calcArrSum([1, 2, 3, 4, 5]));
+console.log(calcArrSum([10, 20, 30, 40, 50]));
 
 //---------------Array_map1---------------------
 function map1(namesArr) {
   const divContainer = document.createElement("ol");
-  document.body.insertAdjacentElement("afterbegin", divContainer);
+  document.body.appendChild(divContainer);
   const namesElems = namesArr.map((name) => {
     const pElem = document.createElement("li");
     const nameNode = document.createTextNode(name);
