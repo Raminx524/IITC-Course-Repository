@@ -1,34 +1,10 @@
 const exKEY = "expenses";
 const inKEY = "incomes";
+const nmKEY = "nightMode";
 const incomeArr = initializeArrayFromLocalStorage(inKEY);
 const expensesArr = initializeArrayFromLocalStorage(exKEY);
 let inputOutlineColor = "#32a5a0";
-document.querySelector("#valInput").addEventListener("keyup", (event) => {
-  if (event.keyCode === 13) {
-    //for enter key ascii code
-    document.querySelector(".fa-circle-check").click();
-  }
-});
-firstRender();
-handleDateHeader();
-document.querySelector(".fa-circle-check").addEventListener("click", () => {
-  const itemDescription = document.querySelector("#descInput").value;
-  const itemValue = +Number.parseFloat(
-    document.querySelector("#valInput").value
-  ).toFixed(2);
-  const operator = document.querySelector("#valueOperation").value;
-  const isValid = isInfoValid(itemDescription, itemValue);
-  if (isValid) {
-    document.querySelector("#errorDisplay").innerText = "";
-    pushToCorrectArray(
-      { description: itemDescription, value: itemValue },
-      operator
-    );
-    const transactionsSums = calcSums();
-    createDOMHistoryItems(operator, ...transactionsSums);
-    renderInfo(...transactionsSums);
-  }
-});
+init();
 
 function isInfoValid(desc, val) {
   const errorDisplay = document.querySelector("#errorDisplay");
@@ -242,4 +218,45 @@ function getElemIndexInArray(btnTargetElem, idStrParam) {
     });
   }
   return indexResult;
+}
+function handleNightMode() {
+  const status = JSON.parse(localStorage.getItem(nmKEY));
+  if (status) {
+    document.querySelector(".container").classList.add("nmActive");
+  }
+}
+function init() {
+  firstRender();
+  handleNightMode();
+  handleDateHeader();
+  document.querySelector("#nightModeBtn").addEventListener("click", () => {
+    const pageElement = document.querySelector(".container");
+    pageElement.classList.toggle("nmActive");
+    const nightModeStatus = pageElement.classList.contains("nmActive");
+    localStorage.setItem(nmKEY, JSON.stringify(nightModeStatus));
+  });
+  document.querySelector(".fa-circle-check").addEventListener("click", () => {
+    const itemDescription = document.querySelector("#descInput").value;
+    const itemValue = +Number.parseFloat(
+      document.querySelector("#valInput").value
+    ).toFixed(2);
+    const operator = document.querySelector("#valueOperation").value;
+    const isValid = isInfoValid(itemDescription, itemValue);
+    if (isValid) {
+      document.querySelector("#errorDisplay").innerText = "";
+      pushToCorrectArray(
+        { description: itemDescription, value: itemValue },
+        operator
+      );
+      const transactionsSums = calcSums();
+      createDOMHistoryItems(operator, ...transactionsSums);
+      renderInfo(...transactionsSums);
+    }
+  });
+  document.querySelector("#valInput").addEventListener("keyup", (event) => {
+    if (event.keyCode === 13) {
+      //for enter key ascii code
+      document.querySelector(".fa-circle-check").click();
+    }
+  });
 }

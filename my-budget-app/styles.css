@@ -9,7 +9,6 @@ body {
   width: 100vw;
   overflow-x: hidden;
 }
-
 img,
 canvas {
   display: block;
@@ -20,6 +19,7 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
 }
 
 .headerTransactionsContainer {
@@ -137,7 +137,7 @@ input {
 
 .fa-circle-check {
   font-size: x-large;
-  color:  rgb(50, 165, 160);
+  color: rgb(50, 165, 160);
 }
 
 input#descInput {
@@ -202,7 +202,7 @@ input#valInput {
 }
 
 .precentagesHistory {
-  background-color: rgb(245, 50, 55, 0.2); 
+  background-color: rgb(245, 50, 55, 0.2);
   padding: 0.5em;
   font-size: x-small;
   border-radius: 5px;
@@ -235,4 +235,58 @@ div#sumDisplayIncomes {
   }
 }
 
+#nightModeBtn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  height: 4em;
+  width: 4em;
+  background-color: #000;
+  border: none;
+  border-radius: 2px;
+}
+.fa-moon:before {
+  font-size: 2em;
+  color: #fff;
+}
+/* ------------------NightMode Design---------------- */
+.nmActive {
+  background-color: black;
+}
 
+.nmActive .userInputsContainer {
+  background-color: rgb(53, 53, 53);
+}
+
+.nmActive input {
+  background-color: #000;
+  color: #fff;
+}
+
+.nmActive #valueOperation {
+  background-color: #000;
+  color: #fff;
+}
+
+
+.nmActive .historyItem {
+  background-color: #000;
+}
+
+.nmActive p {
+  color: #fff;
+}
+
+.nmActive .historyItem:nth-child(2n) {
+  background-color: rgb(35 35 35);
+}
+
+/* Input:txt autofiller style */
+.nmActive input:-webkit-autofill,
+.nmActive input:-webkit-autofill:hover, 
+.nmActive input:-webkit-autofill:focus, 
+.nmActive input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px rgb(0, 0, 0) inset !important;
+    -webkit-text-fill-color: #fff;
+}
