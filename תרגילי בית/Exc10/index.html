@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <button id="successBtn" onclick="someFunc(0)">Resolve</button>
+        <button id="failBtn" onclick="someFunc(1)">Reject</button>
+        <p></p>
+        <button id="spinBtn" onclick="handleSpinner()">Show Loader</button>
+        <div class="loader"></div>
+        <h1 onclick="getTableData()">JSON Placeholder(Click to load)</h1>
+        <table id="tblElem">
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
