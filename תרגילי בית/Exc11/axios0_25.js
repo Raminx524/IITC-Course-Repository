@@ -1,31 +1,41 @@
-const POSTS = "https://jsonplaceholder.typicode.com/posts";
-const USERS = "https://jsonplaceholder.typicode.com/users";
-const tableElem = document.querySelector("#tblElem");
-getTableData();
-function getTableData() {
-  tableElem.innerHTML = "";
-  axios.get(POSTS).then((postRes) => {
-    axios.get(USERS).then((userRes) => {
+const BASE_URL = "https://jsonplaceholder.typicode.com/";
+const POSTS_URL = `${BASE_URL}/posts`;
+const USERS_URL = `${BASE_URL}/users`;
+const TABLE_ELEMENT = document.querySelector("#tblElem");
+
+function init() {
+  TABLE_ELEMENT.innerHTML = "";
+  axios.get(POSTS_URL).then((postRes) => {
+    axios.get(USERS_URL).then((userRes) => {
+      const joinedTable = addUserNameToPosts(postRes.data, userRes.data);
       setTimeout(() => {
-        printTableData(postRes.data, userRes.data);
+        printTableData(joinedTable);
       }, 1500);
     });
   });
 }
-function printTableData(dataParam, users) {
-  const tableDataElems = dataParam.map(
-    (obj) =>
+
+function addUserNameToPosts(posts, users) {
+  return posts.map((post) => {
+    const userData = users.find((user) => user.id === post.userId);
+    const newPost = {
+      ...post,
+      userName: userData.username,
+    };
+    return newPost;
+  });
+}
+
+function printTableData(table) {
+  const tableDataElems = table.map(
+    (row) =>
       `<tr>
-    <td>${obj.id}</td><td class="userNames">${getUserName(
-        obj.userId,
-        users
-      )}</td><td>${obj.title}</td><td>${obj.body}</td>
+    <td>${row.id}</td><td class="userNames">${row.userName}</td><td>${row.title}</td><td>${row.body}</td>
     </tr>`
   );
-  tableElem.innerHTML += `<thead><th>ID</th><th>User Name</th><th>Title</th><th>Body</th></thead><tbody></tbody>`;
+  TABLE_ELEMENT.innerHTML += `<thead><th>ID</th><th>User Name</th><th>Title</th><th>Body</th></thead><tbody></tbody>`;
   document.querySelector("tbody").innerHTML = tableDataElems.join("");
   document.querySelector(".loader").style.display = "none";
 }
-function getUserName(index, userNames) {
-  return userNames[index - 1].username;
-}
+
+init();
