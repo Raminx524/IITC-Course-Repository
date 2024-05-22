@@ -1,41 +1,41 @@
-//TODO------------------------------Promise 3------------------------------
-const getUser = new Promise((resolve, reject) => {
-  setTimeout(() => {
-    resolve({ id: 1, name: "John Doe" });
-  }, 1000);
-});
+// //TODO------------------------------Promise 3------------------------------
+// const getUser = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve({ id: 1, name: "John Doe" });
+//   }, 1000);
+// });
 
-getUser
-  .then((user) => {
-    console.log(user);
-    return new Promise((resolve) => resolve(user.name));
-  })
-  .then((userName) => {
-    setTimeout(() => {
-      console.log(userName);
-    }, 1000);
-  });
+// getUser
+//   .then((user) => {
+//     console.log(user);
+//     return new Promise((resolve) => resolve(user.name));
+//   })
+//   .then((userName) => {
+//     setTimeout(() => {
+//       console.log(userName);
+//     }, 1000);
+//   });
 
-//TODO------------------------------Promise 3.5------------------------------
-const driveToGasStation = new Promise((resolve, reject) => {
-  resolve("Drive to gas station");
-});
-const fillTheCar = new Promise((resolve, reject) => {
-  resolve("Fill the car");
-});
-const driveToResturant = new Promise((resolve, reject) => {
-  resolve("drive to restaurant");
-});
-driveToGasStation
-  .then((msg) => {
-    console.log(msg);
-    return fillTheCar;
-  })
-  .then((msg) => {
-    console.log(msg);
-    return driveToResturant;
-  })
-  .then((msg) => console.log(msg));
+// //TODO------------------------------Promise 3.5------------------------------
+// const driveToGasStation = new Promise((resolve, reject) => {
+//   resolve("Drive to gas station");
+// });
+// const fillTheCar = new Promise((resolve, reject) => {
+//   resolve("Fill the car");
+// });
+// const driveToResturant = new Promise((resolve, reject) => {
+//   resolve("drive to restaurant");
+// });
+// driveToGasStation
+//   .then((msg) => {
+//     console.log(msg);
+//     return fillTheCar;
+//   })
+//   .then((msg) => {
+//     console.log(msg);
+//     return driveToResturant;
+//   })
+//   .then((msg) => console.log(msg));
 
 //TODO------------------------------Promise 5------------------------------
 const fetchUser = new Promise((resolve, reject) => {
@@ -48,9 +48,9 @@ const fetchPosts = new Promise((resolve, reject) => {
     resolve(["Post1", "Post2"]);
   }, 2000);
 });
-Promise.all([fetchUser, fetchPosts]).then((messages) => {
-  messages.forEach((msg) => console.log(msg));
-});
+// Promise.all([fetchUser, fetchPosts]).then((messages) => {
+//   messages.forEach((msg) => console.log(msg));
+// });
 
 //TODO------------------------------Promise 7 & 8------------------------------
 const BASE_URL = "https://jsonplaceholder.typicode.com";
@@ -92,12 +92,18 @@ const getComments = new Promise((resolve, reject) => {
 
 //TODO------------------------------Promise 6------------------------------
 async function promiseAll(promises) {
-  const promisesResults = [];
-  promises.forEach((promiseVar) => {
-    promiseVar.then((result) => promisesResults.push(result));
+  return new Promise((resolve, reject) => {
+    try {
+      const promisesResults = [];
+      promises.forEach((promiseVar) => {
+        promiseVar.then((result) => promisesResults.push(result));
+      });
+      resolve(promisesResults);
+    } catch (error) {
+      console.log(error);
+    }
   });
-  return promisesResults;
 }
 console.log(promiseAll([fetchUser, fetchPosts]));
 
-// console.log(Promise.all([fetchUser, fetchPosts]));
+console.log(Promise.all([fetchUser, fetchPosts]));
