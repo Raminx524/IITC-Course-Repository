@@ -54,15 +54,15 @@ const fetchPosts = new Promise((resolve, reject) => {
 
 //TODO------------------------------Promise 7 & 8------------------------------
 const BASE_URL = "https://jsonplaceholder.typicode.com";
-const getPosts = new Promise((resolve, reject) => {
-  axios.get(`${BASE_URL}/posts`).then((res) => resolve(res.data));
-});
-const getUsers = new Promise((resolve, reject) => {
-  axios.get(`${BASE_URL}/users`).then((res) => resolve(res.data));
-});
-const getComments = new Promise((resolve, reject) => {
-  axios.get(`${BASE_URL}/comments`).then((res) => resolve(res.data));
-});
+const getPosts = axios
+  .get(`${BASE_URL}/posts`)
+  .then((res) => resolve(res.data));
+const getUsers = axios
+  .get(`${BASE_URL}/users`)
+  .then((res) => resolve(res.data));
+const getComments = axios
+  .get(`${BASE_URL}/comments`)
+  .then((res) => resolve(res.data));
 
 //* Promise Chaining (Promise7)
 
