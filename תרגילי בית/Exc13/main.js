@@ -8,6 +8,7 @@ const baseURL = "http://localhost:8001/books";
 const nextBtn = document.querySelector("#nextPageBtn");
 const prevBtn = document.querySelector("#prevPageBtn");
 let pageNum = 1;
+
 displayDataBtn.onclick = async () => {
   try {
     const response = await axios.get(`${baseURL}?_page=${pageNum}`);
@@ -25,6 +26,7 @@ displayDataBtn.onclick = async () => {
     console.log(err);
   }
 };
+
 addForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const msgBox = document.querySelector("#addMsgBox");
@@ -38,6 +40,7 @@ addForm.addEventListener("submit", async (e) => {
     msgBox.innerText = err;
   }
 });
+
 delForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const msgBox = document.querySelector("#delMsgBox");
@@ -48,6 +51,7 @@ delForm.addEventListener("submit", async (e) => {
     msgBox.innerText = `Error: Book not found!`;
   }
 });
+
 updateForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   const msgBox = document.querySelector("#updateMsgBox");
@@ -62,10 +66,12 @@ updateForm.addEventListener("submit", async (e) => {
     msgBox.innerText = `Error: Book not found!`;
   }
 });
+
 nextBtn.onclick = () => {
   pageNum++;
   displayDataBtn.click();
 };
+
 prevBtn.onclick = () => {
   pageNum--;
   displayDataBtn.click();
