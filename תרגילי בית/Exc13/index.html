@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page">
+        <h1>Books Database</h1>
+        <div id="forms">
+            <form id="createBookForm">
+                <h2>Add Book:</h2>
+                <input type="text" name="name" placeholder="Book Name" required>
+                <input type="text" name="author" placeholder="Author" required>
+                <input type="number" name="numPages" placeholder="Number of pages" required>
+                <button>Add Book</button>
+                <span id="addMsgBox" class="msgBox"></span>
+            </form>
+            <form id="deleteBookForm">
+                <h2>Delete Book:</h2>
+                <input type="text" placeholder="id" required name="id">
+                <button>Delete Book</button>
+                <span id="delMsgBox" class="msgBox"></span>
+            </form>
+            <form id="updateBookForm">
+                <h2>Update Book</h2>
+                <input type="text" name="id" placeholder="Book ID" required>
+                <input type="text" name="name" placeholder="Book Name" required>
+                <input type="text" name="author" placeholder="Author" required>
+                <input type="number" name="numPages" placeholder="Number of pages" required>
+                <button>Update Book</button>
+                <span id="updateMsgBox" class="msgBox"></span>
+            </form>
+        </div>
+        <button id="getAllBtn">Display Books</button>
+        <table></table>
+        <div id="paginationBtns">
+            <button class="pagingBtns" id="prevPageBtn">Previous page</button>
+            <button class="pagingBtns" id="nextPageBtn">Next page</button>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
